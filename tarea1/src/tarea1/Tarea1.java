@@ -38,18 +38,21 @@ class docTributario{
     public Date getFecha(){
         return this.fecha;
     }
+
 }
 
 class Boleta extends docTributario{
     public Boleta(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
+
 }
 class Factura extends docTributario{
     public Factura(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
 }
+// ToDo: terminar toString()
 class Pago{
     private float monto;
     private Date fecha;
@@ -70,6 +73,11 @@ class Pago{
         monto = newMonto;
     }
     
+    @Override
+    public String toString() {
+        return "Monto: " + monto + "\nFecha: " + fecha + "\n";
+    }
+    
 }
 
 class Efectivo extends Pago{
@@ -86,6 +94,9 @@ class Efectivo extends Pago{
     }
     public void setDineroEntregado(float num){
         dineroEntregado = num;
+    }
+    public String toString(){
+        return super.toString() + "\nMonto recibido: " + dineroEntregado + "\nVuelto: " + calcDevolucion();
     }
 }
 
@@ -109,6 +120,9 @@ class Transferencia extends Pago{
     public void setNumCuenta(String num){
         numCuenta = num;
     }
+    public String toString(){
+        return super.toString() + "\nBanco: " + banco + "\nNúmero de Cuenta: " + numCuenta + "\n";
+    }
 }
 
 class Tarjeta extends Pago{
@@ -129,6 +143,9 @@ class Tarjeta extends Pago{
     }
     public void setNumTransaccion(String num){
         numTransaccion = num;
+    }
+    public String toString(){
+        return super.toString() + "\nTipo: " + tipo + "\nNúmero de Transacción " + numTransaccion + "\n";
     }
 }
 
@@ -155,7 +172,7 @@ class Articulo{
     public String getDescripcion(){
         return descripcion;
     }
-    public float precio(){
+    public float getPrecio(){
         return precio;
     }
     public void setTipo(float newPeso){
@@ -170,9 +187,9 @@ class Articulo{
     public void setPrecio(float newPrecio){
         precio = newPrecio;
     }
-    @Override
+
     public String toString() {
-        return "nombre: " + nombre + "\nprecio: " + precio + "\ndescripcion: " + descripcion + "\n peso: "+ peso + "\n";
+        return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\n peso: "+ getPeso() + "\n";
     }
     
 
