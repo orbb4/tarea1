@@ -136,7 +136,45 @@ class DetalleOrden{
     public DetalleOrden(){}
 }
 class Articulo{
-    public Articulo(){}
+    private float peso;
+    private String nombre;
+    private String descripcion;
+    private float precio;
+    public Articulo(float peso, String nombre, String descripcion, float precio){
+        this.peso = peso;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
+    }
+    public float getPeso(){
+        return peso;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public String getDescripcion(){
+        return descripcion;
+    }
+    public float precio(){
+        return precio;
+    }
+    public void setTipo(float newPeso){
+        peso = newPeso;
+    }
+    public void setNombre(String newNombre){
+        nombre = newNombre;
+    }
+    public void setDescripcion(String newDes){
+        descripcion = newDes;
+    }
+    public void setPrecio(float newPrecio){
+        precio = newPrecio;
+    }
+    @Override
+    public String toString() {
+        return "nombre: " + nombre + "\nprecio: " + precio + "\ndescripcion: " + descripcion + "\n peso: "+ peso + "\n";
+    }
+    
 
 }
 
