@@ -24,13 +24,31 @@ class docTributario{
     private String numero;
     private String rut;
     private Date fecha;
-    public docTributario(){}
+    public docTributario(String numero, String rut, Date fecha){
+        this.numero=numero;
+        this.rut=rut;
+        this.fecha=fecha;
+    }
+    public String getNumero(){
+        return this.numero;
+    }
+    public String getRut(){
+        return this.rut;
+    }
+    public Date getFecha(){
+        return this.fecha;
+    }
 }
-class Boleta{
-    public Boleta(){}
+
+class Boleta extends docTributario{
+    public Boleta(String numero, String rut, Date fecha){
+        super(numero, rut, fecha);
+    }
 }
-class Factura{
-    public Factura(){}
+class Factura extends docTributario{
+    public Factura(String numero, String rut, Date fecha){
+        super(numero, rut, fecha);
+    }
 }
 class Pago{
     private float monto;
