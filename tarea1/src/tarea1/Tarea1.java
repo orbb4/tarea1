@@ -30,13 +30,22 @@ class docTributario{
         this.fecha=fecha;
     }
     public String getNumero(){
-        return this.numero;
+        return numero;
     }
     public String getRut(){
-        return this.rut;
+        return rut;
     }
     public Date getFecha(){
-        return this.fecha;
+        return fecha;
+    }
+    public void setNumero(String numero){
+        this.numero=numero;
+    }
+    public void setRut(String rut){
+        this.rut=rut;
+    }
+    public void setFecha(Date fecha){
+        this.fecha=fecha;
     }
 }
 
