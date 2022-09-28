@@ -92,13 +92,9 @@ class Boleta extends docTributario{
     public Boleta(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
-<<<<<<< HEAD
-
-=======
     public String toString(){
         return super.toString();
     }
->>>>>>> 04360b5c26c66d38e3bc5694f2b0271cf63f738f
 }
 class Factura extends docTributario{
     public Factura(String numero, String rut, Date fecha){
