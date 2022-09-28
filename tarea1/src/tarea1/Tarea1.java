@@ -33,7 +33,10 @@ class Boleta{
 class Factura{
     public Factura(){}
 }
-class Pago{}
+class Pago{
+    private float monto;
+    private Date fecha;
+}
 class DetalleOrden{
     public DetalleOrden(){}
 }
