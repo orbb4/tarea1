@@ -1,4 +1,3 @@
-// testing. si este mensaje se ve en la rama maestra, quizá algo esté mal
 package tarea1;
 import java.util.Date;
 
@@ -36,7 +35,85 @@ class Factura{
 class Pago{
     private float monto;
     private Date fecha;
+    public Pago(float monto, Date fecha){
+        this.monto = monto;
+        this.fecha = fecha;
+    }
+    public float getMonto(){
+        return monto;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    public void setFecha(Date newFecha){
+        fecha = newFecha;
+    }
+    public void setMonto(float newMonto){
+        monto = newMonto;
+    }
+    
 }
+
+class Efectivo extends Pago{
+    private float dineroEntregado;
+    public Efectivo(float monto, Date fecha, float dineroEntregado){
+        super(monto, fecha);
+        this.dineroEntregado = dineroEntregado;
+    }
+    public float calcDevolucion(){
+        return getDineroEntregado() - getMonto(); 
+    }
+    public float getDineroEntregado(){
+        return dineroEntregado;
+    }
+    public void setDineroEntregado(float num){
+        dineroEntregado = num;
+    }
+}
+
+class Transferencia extends Pago{
+    private String banco;
+    private String numCuenta;
+    public Transferencia(float monto, Date fecha, String banco, String numCuenta){
+        super(monto, fecha);
+        this.banco = banco;
+        this.numCuenta = numCuenta;
+    }
+    public String getBanco(){
+        return banco;
+    }
+    public String getNumCuenta(){
+        return numCuenta;
+    }
+    public void setBanco(String newBanco){
+        banco = newBanco;
+    }
+    public void setNumCuenta(String num){
+        numCuenta = num;
+    }
+}
+
+class Tarjeta extends Pago{
+    private String tipo;
+    private String numTransaccion;
+    public Tarjeta(String tipo, String numTransaccion){
+        this.numTransaccion = numTransaccion;
+        this.tipo = tipo;
+    }
+    public String getTipo(){
+        return tipo;
+    }
+    public String getNumTransaccion(){
+        return numTransaccion;
+    }
+    public void setTipo(String newTipo){
+        tipo = newTipo;
+    }
+    public void setNumTransaccion(String num){
+        numTransaccion = num;
+    }
+}
+
 class DetalleOrden{
     public DetalleOrden(){}
 }
