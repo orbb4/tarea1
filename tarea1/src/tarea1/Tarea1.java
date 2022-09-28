@@ -3,13 +3,48 @@ import java.util.Date;
 
 
 class Cliente{
+    private Direccion ubicacion;
     private String nombre;
     private String rut;
-    public Cliente(){}
-    
+    public Cliente(String nombre, String rut, Direccion ubicacion){
+        this.ubicacion=ubicacion;
+        this.nombre=nombre;
+        this.rut=rut;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public String getRut(){
+        return rut;
+    }
+    public Direccion getUbicacion(){
+        return ubicacion;
+    }
+    public void setNombre(String nombre){
+        this.nombre=nombre;
+    }
+    public void setRut(String rut){
+        this.rut=rut;
+    }
+    public void setUbicacion(Direccion ubicacion){
+        this.ubicacion=ubicacion;
+    }
+    public String toString(){
+        return " Nombre: " + nombre + "\nRut: " + rut + "\nDirección: " + ubicacion+"\n";
+    }
 }
+
 class Direccion{
-    public Direccion(){}
+    private String direccion;
+    public Direccion(String direccion){
+        this.direccion=direccion;
+    }
+    public String getDireccion(){
+        return direccion;
+    }
+    public void setDireccion(String direccion){
+        this.direccion=direccion;
+    }
 }
 class OrdenCompra{
     private String estado;
@@ -47,16 +82,25 @@ class docTributario{
     public void setFecha(Date fecha){
         this.fecha=fecha;
     }
+    public String toString(){
+        return " Número: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n";
+    }
 }
 
 class Boleta extends docTributario{
     public Boleta(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
+    public String toString(){
+        return super.toString();
+    }
 }
 class Factura extends docTributario{
     public Factura(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
+    }
+    public String toString(){
+        return super.toString();
     }
 }
 class Pago{
