@@ -133,6 +133,8 @@ class Pago{
 }
 
 class Efectivo extends Pago{
+    // variable añadida para poder saber con cuanto dinero pagó el cliente y
+    // así el método calcDevolución() devuelva el vuelto correspondiente
     private float dineroEntregado;
     public Efectivo(float monto, Date fecha, float dineroEntregado){
         super(monto, fecha);
@@ -239,7 +241,7 @@ class Articulo{
     public void setPrecio(float newPrecio){
         precio = newPrecio;
     }
-
+    
     public String toString() {
         return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\n peso: "+ getPeso() + "\n";
     }
