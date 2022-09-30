@@ -259,6 +259,12 @@ class DetalleOrden{
         sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
         return sumaPreciosSinIVA;
     }
+    public float getCantidad(){
+        return cantidad;
+    }
+    public ArrayList<Articulo> getArticulos(){
+        return articulos;
+    }
     
 }
 class Articulo{
