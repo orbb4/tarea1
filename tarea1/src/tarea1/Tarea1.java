@@ -53,13 +53,24 @@ class Direccion{
 class OrdenCompra{
     private String estado;
     private Date fecha;
-    public OrdenCompra(){}
+    private DetalleOrden orden;
+    public OrdenCompra(String estado, Date fecha, DetalleOrden orden){
+        this.estado = estado;
+        this.fecha = fecha;
+        this.orden = orden;
+    }
     public float calcPrecioSinIVA(){
+        return orden.calcPrecioSinIVA();
     }
     public float calcIVA(){
+        return orden.calcIVA();
     }
-    public float calPrecio(){}
-    public float calcPeso(){}
+    public float calPrecio(){
+       return orden.calcPrecio();
+    }
+    public float calcPeso(){
+        return orden.calcPeso();
+    }
 }
 class docTributario{
     private String numero;
@@ -217,7 +228,7 @@ class DetalleOrden{
         this.articulos = articulos;
         this.cantidad = cantidad;
     }
-<<<<<<< HEAD
+
     public float calcIVA(){
         float iva = 0;
         for(Articulo a: articulos){
@@ -225,7 +236,7 @@ class DetalleOrden{
         }
         return iva;
     }
-    public float getPeso(){
+    public float calcPeso(){
         float pesoTotal = 0;
         for(Articulo a: articulos){
             pesoTotal += a.getPeso();
@@ -248,8 +259,6 @@ class DetalleOrden{
     }   
     
             
-    
-=======
     public float calcPrecio(){
         float sumaPrecios=0;
         for(int i=0; i<cantidad; ++i){
@@ -262,7 +271,6 @@ class DetalleOrden{
         sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
         return sumaPreciosSinIVA;
     }
->>>>>>> cote
 }
 class Articulo{
     private float peso;
