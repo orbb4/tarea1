@@ -1,6 +1,10 @@
 package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 292896d54e1b5ae8c8dffa5a4ec5dcebabe2dced
 
 class Cliente{
     private Direccion ubicacion;
@@ -50,8 +54,10 @@ class OrdenCompra{
     private String estado;
     private Date fecha;
     public OrdenCompra(){}
-    public float calcPrecioSinIVA(){}
-    public float calcIVA(){}
+    public float calcPrecioSinIVA(){
+    }
+    public float calcIVA(){
+    }
     public float calPrecio(){}
     public float calcPeso(){}
 }
@@ -211,6 +217,7 @@ class DetalleOrden{
         this.articulos = articulos;
         this.cantidad = cantidad;
     }
+<<<<<<< HEAD
     public float calcIVA(){
         float iva = 0;
         for(Articulo a: articulos){
@@ -242,6 +249,20 @@ class DetalleOrden{
     
             
     
+=======
+    public float calcPrecio(){
+        float sumaPrecios=0;
+        for(int i=0; i<cantidad; ++i){
+            sumaPrecios=sumaPrecios+articulos.get(i).getPrecio();
+        }
+        return sumaPrecios;
+    }
+    public float calcPrecioSinIVA(){
+        float sumaPreciosSinIVA=0;
+        sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
+        return sumaPreciosSinIVA;
+    }
+>>>>>>> cote
 }
 class Articulo{
     private float peso;
