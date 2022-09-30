@@ -217,7 +217,7 @@ class DetalleOrden{
         this.articulos = articulos;
         this.cantidad = cantidad;
     }
-<<<<<<< HEAD
+    
     public float calcIVA(){
         float iva = 0;
         for(Articulo a: articulos){
@@ -247,9 +247,6 @@ class DetalleOrden{
         return "\nCantidad de articulos: " + cantidad + "\nLista de articulos:\n " + listaDeArticulos;
     }   
     
-            
-    
-=======
     public float calcPrecio(){
         float sumaPrecios=0;
         for(int i=0; i<cantidad; ++i){
@@ -262,7 +259,7 @@ class DetalleOrden{
         sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
         return sumaPreciosSinIVA;
     }
->>>>>>> cote
+    
 }
 class Articulo{
     private float peso;
