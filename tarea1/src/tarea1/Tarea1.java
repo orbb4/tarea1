@@ -1,5 +1,6 @@
 package tarea1;
 import java.util.Date;
+import java.util.ArrayList;
 
 
 class Cliente{
@@ -50,8 +51,10 @@ class OrdenCompra{
     private String estado;
     private Date fecha;
     public OrdenCompra(){}
-    public float calcPrecioSinIVA(){}
-    public float calcIVA(){}
+    public float calcPrecioSinIVA(){
+    }
+    public float calcIVA(){
+    }
     public float calPrecio(){}
     public float calcPeso(){}
 }
@@ -186,7 +189,14 @@ class Tarjeta extends Pago{
 }
 
 class DetalleOrden{
+    private int cantidad;
     public DetalleOrden(){}
+    public float calcPrecio(){
+    
+    }
+    public float calPrecioSinIVA(){
+    
+    }
 }
 class Articulo{
     public Articulo(){}
