@@ -1,7 +1,10 @@
 package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 292896d54e1b5ae8c8dffa5a4ec5dcebabe2dced
 
 class Cliente{
     private Direccion ubicacion;
@@ -88,6 +91,7 @@ class docTributario{
     public String toString(){
         return " Número: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n";
     }
+
 }
 
 class Boleta extends docTributario{
@@ -106,6 +110,7 @@ class Factura extends docTributario{
         return super.toString();
     }
 }
+// ToDo: terminar toString()
 class Pago{
     private float monto;
     private Date fecha;
@@ -126,9 +131,16 @@ class Pago{
         monto = newMonto;
     }
     
+    @Override
+    public String toString() {
+        return "Monto: " + monto + "\nFecha: " + fecha + "\n";
+    }
+    
 }
 
 class Efectivo extends Pago{
+    // variable añadida para poder saber con cuanto dinero pagó el cliente y
+    // así el método calcDevolución() devuelva el vuelto correspondiente
     private float dineroEntregado;
     public Efectivo(float monto, Date fecha, float dineroEntregado){
         super(monto, fecha);
@@ -142,6 +154,9 @@ class Efectivo extends Pago{
     }
     public void setDineroEntregado(float num){
         dineroEntregado = num;
+    }
+    public String toString(){
+        return super.toString() + "\nMonto recibido: " + dineroEntregado + "\nVuelto: " + calcDevolucion();
     }
 }
 
@@ -165,6 +180,9 @@ class Transferencia extends Pago{
     public void setNumCuenta(String num){
         numCuenta = num;
     }
+    public String toString(){
+        return super.toString() + "\nBanco: " + banco + "\nNúmero de Cuenta: " + numCuenta + "\n";
+    }
 }
 
 class Tarjeta extends Pago{
@@ -186,20 +204,71 @@ class Tarjeta extends Pago{
     public void setNumTransaccion(String num){
         numTransaccion = num;
     }
+    public String toString(){
+        return super.toString() + "\nTipo: " + tipo + "\nNúmero de Transacción " + numTransaccion + "\n";
+    }
 }
 
 class DetalleOrden{
+    private ArrayList<Articulo> articulos = new ArrayList();
     private int cantidad;
-    public DetalleOrden(){}
-    public float calcPrecio(){
-    
+    public DetalleOrden(int cantidad, ArrayList<Articulo> articulos){
+        this.articulos = articulos;
+        this.cantidad = cantidad;
     }
-    public float calPrecioSinIVA(){
-    
+    public float calcPrecio(){
+        float sumaPrecios=0;
+        for(int i=0; i<cantidad; ++i){
+            sumaPrecios=sumaPrecios+articulos.get(i).getPrecio();
+        }
+        return sumaPrecios;
+    }
+    public float calcPrecioSinIVA(){
+        float sumaPreciosSinIVA=0;
+        sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
+        return sumaPreciosSinIVA;
     }
 }
 class Articulo{
-    public Articulo(){}
+    private float peso;
+    private String nombre;
+    private String descripcion;
+    private float precio;
+    public Articulo(float peso, String nombre, String descripcion, float precio){
+        this.peso = peso;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.descripcion = descripcion;
+    }
+    public float getPeso(){
+        return peso;
+    }
+    public String getNombre(){
+        return nombre;
+    }
+    public String getDescripcion(){
+        return descripcion;
+    }
+    public float getPrecio(){
+        return precio;
+    }
+    public void setTipo(float newPeso){
+        peso = newPeso;
+    }
+    public void setNombre(String newNombre){
+        nombre = newNombre;
+    }
+    public void setDescripcion(String newDes){
+        descripcion = newDes;
+    }
+    public void setPrecio(float newPrecio){
+        precio = newPrecio;
+    }
+    
+    public String toString() {
+        return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\n peso: "+ getPeso() + "\n";
+    }
+    
 
 }
 
