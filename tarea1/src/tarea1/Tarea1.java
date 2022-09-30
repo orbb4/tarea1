@@ -204,12 +204,44 @@ class Tarjeta extends Pago{
 }
 
 class DetalleOrden{
+    // uso de un array de Articulo para obtener precios y peso total de la orden
     private ArrayList<Articulo> articulos = new ArrayList();
     private int cantidad;
     public DetalleOrden(int cantidad, ArrayList<Articulo> articulos){
         this.articulos = articulos;
         this.cantidad = cantidad;
     }
+    public float calcIVA(){
+        float iva = 0;
+        for(Articulo a: articulos){
+            iva+= a.getPrecio()*0.19;
+        }
+        return iva;
+    }
+    public float getPeso(){
+        float pesoTotal = 0;
+        for(Articulo a: articulos){
+            pesoTotal += a.getPeso();
+        }
+        return pesoTotal;
+    }
+    public void setCantidad(int num){
+        cantidad = num;
+    }
+    public void setArticulos(ArrayList<Articulo> newArticulos){
+        articulos = newArticulos;
+    }
+    // TESTEAR
+    public String toString(){
+        String listaDeArticulos = "";
+        for(Articulo a: articulos){
+            listaDeArticulos += a.getNombre() + "\n";
+        }     
+        return "\nCantidad de articulos: " + cantidad + "\nLista de articulos:\n " + listaDeArticulos;
+    }   
+    
+            
+    
 }
 class Articulo{
     private float peso;
