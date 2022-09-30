@@ -1,6 +1,6 @@
 package tarea1;
 import java.util.Date;
-
+import java.util.ArrayList;
 
 class Cliente{
     private Direccion ubicacion;
@@ -204,7 +204,12 @@ class Tarjeta extends Pago{
 }
 
 class DetalleOrden{
-    public DetalleOrden(){}
+    private ArrayList<Articulo> articulos = new ArrayList();
+    private int cantidad;
+    public DetalleOrden(int cantidad, ArrayList<Articulo> articulos){
+        this.articulos = articulos;
+        this.cantidad = cantidad;
+    }
 }
 class Articulo{
     private float peso;
