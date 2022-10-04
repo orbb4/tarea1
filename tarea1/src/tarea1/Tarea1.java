@@ -87,6 +87,9 @@ class OrdenCompra{
     public void serOrden(DetalleOrden newOrden){
         this.orden=newOrden;
     }
+    public String toString(){
+        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrden: " + orden.toString();
+    }
 }
 class docTributario{
     private String numero;
