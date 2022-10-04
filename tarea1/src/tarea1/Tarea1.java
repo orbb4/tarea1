@@ -1,10 +1,8 @@
 package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
-<<<<<<< HEAD
 
-=======
->>>>>>> 292896d54e1b5ae8c8dffa5a4ec5dcebabe2dced
+
 
 class Cliente{
     private Direccion ubicacion;
@@ -70,6 +68,24 @@ class OrdenCompra{
     }
     public float calcPeso(){
         return orden.calcPeso();
+    }
+    public String getEstado(){
+        return estado;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    public DetalleOrden getOrden(){
+        return orden;
+    }
+    public void setEstado(String newEstado){
+        this.estado=newEstado;
+    }
+    public void setFecha(Date newFecha){
+        this.fecha=newFecha;
+    }
+    public void serOrden(DetalleOrden newOrden){
+        this.orden=newOrden;
     }
 }
 class docTributario{
