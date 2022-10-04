@@ -1,10 +1,8 @@
 package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
-<<<<<<< HEAD
 
-=======
->>>>>>> 292896d54e1b5ae8c8dffa5a4ec5dcebabe2dced
+
 
 class Cliente{
     private Direccion ubicacion;
@@ -90,13 +88,13 @@ class docTributario{
     public Date getFecha(){
         return fecha;
     }
-    public void setNumero(String numero){
-        this.numero=numero;
+    public void setNumero(String newNumero){
+        this.numero=newNumero;
     }
-    public void setRut(String rut){
-        this.rut=rut;
+    public void setRut(String newRut){
+        this.rut=newRut;
     }
-    public void setFecha(Date fecha){
+    public void setFecha(Date Fecha){
         this.fecha=fecha;
     }
     public String toString(){
@@ -199,7 +197,8 @@ class Transferencia extends Pago{
 class Tarjeta extends Pago{
     private String tipo;
     private String numTransaccion;
-    public Tarjeta(String tipo, String numTransaccion){
+    public Tarjeta(String tipo, String numTransaccion, float monto, Date fecha){
+        super(monto,fecha);
         this.numTransaccion = numTransaccion;
         this.tipo = tipo;
     }
