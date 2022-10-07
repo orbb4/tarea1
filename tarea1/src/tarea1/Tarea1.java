@@ -139,7 +139,8 @@ class Factura extends docTributario{
         return super.toString();
     }
 }
-// ToDo: terminar toString()
+
+
 class Pago{
     private float monto;
     private Date fecha;
@@ -168,24 +169,11 @@ class Pago{
 }
 
 class Efectivo extends Pago{
-    // variable añadida para poder saber con cuanto dinero pagó el cliente y
-    // así el método calcDevolución() devuelva el vuelto correspondiente
-    private float dineroEntregado;
-    public Efectivo(float monto, Date fecha, float dineroEntregado){
+    public Efectivo(float monto, Date fecha){
         super(monto, fecha);
-        this.dineroEntregado = dineroEntregado;
-    }
-    public float calcDevolucion(){
-        return getDineroEntregado() - getMonto(); 
-    }
-    public float getDineroEntregado(){
-        return dineroEntregado;
-    }
-    public void setDineroEntregado(float num){
-        dineroEntregado = num;
     }
     public String toString(){
-        return super.toString() + "\nMonto recibido: " + dineroEntregado + "\nVuelto: " + calcDevolucion();
+        return super.toString();
     }
 }
 
