@@ -78,15 +78,26 @@ class OrdenCompra{
     private String estado;
     private Date fecha;
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes){
+    private ArrayList<Pago> pagos = new ArrayList();
+    private ArrayList<DocTributario> documento;
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
+        this.documento = documento; 
     }
+    public float getVuelto(){
+        float total = 0;
+        for(Pago p: pagos){
+            total += p.getMonto();
+        }
+        return total;
+    }
+
     public float calcPrecioSinIVA(){
         float precioTotalSinIva=0;
         for(DetalleOrden a: detalleOrdenes){
-        precioTotalSinIva+= a.calcPrecioSinIVA();
+            precioTotalSinIva+= a.calcPrecioSinIVA();
         }
         return precioTotalSinIva;
     }
@@ -113,6 +124,9 @@ class OrdenCompra{
     }
     public String getEstado(){
         return estado;
+    }
+    public ArrayList<DocTributario> getDoc(){
+        return documento;
     }
     public Date getFecha(){
         return fecha;
@@ -304,12 +318,12 @@ class DetalleOrden{
     }   
     
     public float calcPrecio(){
-        float sumaPrecios=arti.getPrecio()*cantidad;
+        float sumaPrecios=arti.getPrecio()*cantidad*(float)1.19;
         return sumaPrecios;
     }
     public float calcPrecioSinIVA(){
         float sumaPreciosSinIVA=0;
-        sumaPreciosSinIVA = this.calcPrecio()-(this.calcPrecio()*(float)0.19);
+        sumaPreciosSinIVA = arti.getPrecio()*cantidad;
         return sumaPreciosSinIVA;
     }
 
