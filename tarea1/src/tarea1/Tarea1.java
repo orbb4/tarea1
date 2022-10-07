@@ -102,26 +102,13 @@ class OrdenCompra{
     public void setDetalleOrdenes(ArrayList<DetalleOrden> newDetalleOrdenes){
         detalleOrdenes=newDetalleOrdenes;
     }
-    public String getEstado(){
-        return estado;
-    }
-    public Date getFecha(){
-        return fecha;
-    }
-    public DetalleOrden getOrden(){
-        return orden;
-    }
-    public void setEstado(String newEstado){
-        this.estado=newEstado;
-    }
-    public void setFecha(Date newFecha){
-        this.fecha=newFecha;
-    }
-    public void serOrden(DetalleOrden newOrden){
-        this.orden=newOrden;
-    }
+    
     public String toString(){
-        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrden: " + orden.toString();
+        String strorden = "";
+        for(DetalleOrden a: detalleOrdenes){
+            strorden+=a.toString();
+        }
+        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden;
     }
 }
 class docTributario{
