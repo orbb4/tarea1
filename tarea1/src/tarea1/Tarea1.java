@@ -3,7 +3,6 @@ import java.util.Date;
 import java.util.ArrayList;
 
 
-
 class Cliente{
     private Direccion ubicacion;
     private String nombre;
@@ -242,47 +241,34 @@ class Tarjeta extends Pago{
 
 class DetalleOrden{
     // uso de un array de Articulo para obtener precios y peso total de la orden
-    private ArrayList<Articulo> articulos = new ArrayList();
+    private arti = new Articulo();
     private int cantidad;
-    public DetalleOrden(int cantidad, ArrayList<Articulo> articulos){
-        this.articulos = articulos;
+    public DetalleOrden(int cantidad, Articulo arti){
+        this.arti = arti;
         this.cantidad = cantidad;
     }
 
     public float calcIVA(){
-        float iva = 0;
-        for(Articulo a: articulos){
-            iva+= a.getPrecio()*0.19;
-        }
+        float iva = cantidad*arti.getPrecio*0.19;
         return iva;
     }
     public float calcPeso(){
-        float pesoTotal = 0;
-        for(Articulo a: articulos){
-            pesoTotal += a.getPeso();
-        }
+        float pesoTotal = cantidad*arti.getPeso;    
         return pesoTotal;
     }
     public void setCantidad(int num){
         cantidad = num;
     }
-    public void setArticulos(ArrayList<Articulo> newArticulos){
-        articulos = newArticulos;
+    public void setArticulos(Articulo newArticulo){
+        articulo = newArticulo;
     }
     // TESTEAR
     public String toString(){
-        String listaDeArticulos = "";
-        for(Articulo a: articulos){
-            listaDeArticulos += a.getNombre() + "\n";
-        }     
-        return "\nCantidad de articulos: " + cantidad + "\nLista de articulos:\n " + listaDeArticulos;
+        return "Articulo: " + arti.getNombre + ", cantidad: " + cantidad + "\n";
     }   
     
     public float calcPrecio(){
-        float sumaPrecios=0;
-        for(int i=0; i<cantidad; ++i){
-            sumaPrecios=sumaPrecios+articulos.get(i).getPrecio();
-        }
+        float sumaPrecios=arti.getPrecio*cantidad;
         return sumaPrecios;
     }
     public float calcPrecioSinIVA(){
@@ -294,8 +280,8 @@ class DetalleOrden{
     public float getCantidad(){
         return cantidad;
     }
-    public ArrayList<Articulo> getArticulos(){
-        return articulos;
+    public Articulo getArticulo(){
+        return articulo;
     }
 
 }
