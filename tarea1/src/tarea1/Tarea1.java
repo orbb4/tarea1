@@ -241,7 +241,7 @@ class Tarjeta extends Pago{
 
 class DetalleOrden{
     // uso de un array de Articulo para obtener precios y peso total de la orden
-    private arti = new Articulo();
+    private Articulo arti;
     private int cantidad;
     public DetalleOrden(int cantidad, Articulo arti){
         this.arti = arti;
@@ -249,26 +249,26 @@ class DetalleOrden{
     }
 
     public float calcIVA(){
-        float iva = cantidad*arti.getPrecio*0.19;
+        float iva = cantidad*arti.getPrecio()*(float)0.19;
         return iva;
     }
     public float calcPeso(){
-        float pesoTotal = cantidad*arti.getPeso;    
+        float pesoTotal = cantidad*arti.getPeso();    
         return pesoTotal;
     }
     public void setCantidad(int num){
         cantidad = num;
     }
     public void setArticulos(Articulo newArticulo){
-        articulo = newArticulo;
+        arti = newArticulo;
     }
     // TESTEAR
     public String toString(){
-        return "Articulo: " + arti.getNombre + ", cantidad: " + cantidad + "\n";
+        return "Articulo: " + arti.getNombre() + ", cantidad: " + cantidad + "\n";
     }   
     
     public float calcPrecio(){
-        float sumaPrecios=arti.getPrecio*cantidad;
+        float sumaPrecios=arti.getPrecio()*cantidad;
         return sumaPrecios;
     }
     public float calcPrecioSinIVA(){
@@ -281,7 +281,7 @@ class DetalleOrden{
         return cantidad;
     }
     public Articulo getArticulo(){
-        return articulo;
+        return arti;
     }
 
 }
