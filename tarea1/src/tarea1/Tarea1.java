@@ -50,23 +50,57 @@ class Direccion{
 class OrdenCompra{
     private String estado;
     private Date fecha;
-    private DetalleOrden orden;
-    public OrdenCompra(String estado, Date fecha, DetalleOrden orden){
+    private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes){
         this.estado = estado;
         this.fecha = fecha;
-        this.orden = orden;
+        this.detalleOrdenes = detalleOrdenes;
     }
     public float calcPrecioSinIVA(){
-        return orden.calcPrecioSinIVA();
+        float precioTotalSinIva=0;
+        for(DetalleOrden a: detalleOrdenes){
+        precioTotalSinIva+= a.calcPrecioSinIVA();
+        }
+        return precioTotalSinIva;
     }
     public float calcIVA(){
-        return orden.calcIVA();
+        float totalIva=0;
+        for(DetalleOrden a: detalleOrdenes){
+        totalIva+= a.calcIVA();
+        }
+        return totalIva;
     }
     public float calPrecio(){
-       return orden.calcPrecio();
+       float precioTotal=0;
+       for(DetalleOrden a: detalleOrdenes){
+        precioTotal+= a.calcPrecio();
+        }
+       return precioTotal;
     }
     public float calcPeso(){
-        return orden.calcPeso();
+        float totalPeso=0;
+        for(DetalleOrden a: detalleOrdenes){
+        totalPeso+= a.calcPeso();
+        }
+        return totalPeso;
+    }
+    public String getEstado(){
+        return estado;
+    }
+    public Date getFecha(){
+        return fecha;
+    }
+    public ArrayList<DetalleOrden> getDetalleOrdenes(){
+        return detalleOrdenes;
+    }
+    public void setEstado(String newEstado){
+        estado=newEstado;
+    }
+    public void setFecha(Date newFecha){
+        fecha=newFecha;
+    }
+    public void setDetalleOrdenes(ArrayList<DetalleOrden> newDetalleOrdenes){
+        detalleOrdenes=newDetalleOrdenes;
     }
     public String getEstado(){
         return estado;
