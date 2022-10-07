@@ -37,14 +37,41 @@ class Cliente{
 
 class Direccion{
     private String direccion;
-    public Direccion(String direccion){
+    private ArrayList<DocTributario> docTributarios = new ArrayList();
+    private ArrayList<Cliente> clientes = new ArrayList();
+    public Direccion(String direccion, ArrayList<DocTributario> docTributarios, ArrayList<Cliente> clientes){
         this.direccion=direccion;
+        this.docTributarios=docTributarios;
+        this.clientes=clientes;
     }
     public String getDireccion(){
         return direccion;
     }
     public void setDireccion(String direccion){
         this.direccion=direccion;
+    }
+    public ArrayList<DocTributario> getDocTributarios(){
+        return docTributarios;
+    }
+    public void setDoctributarios(ArrayList<DocTributario> newDocTributarios){
+        docTributarios=newDocTributarios;
+    }
+    public ArrayList<Cliente> getClientes(){
+        return clientes;
+    }
+    public void setClientes(ArrayList<Cliente> newClientes){
+        clientes=newClientes;
+    }
+    public String toString(){
+        String strdocTributario = "";
+        for(DocTributario a: docTributarios){
+            strdocTributario+=a.toString();
+        }
+        String strcliente = "";
+        for(Cliente a: clientes){
+            strcliente+=a.toString();
+        }
+        return " Dirección: " + direccion + "\nDocumentos tributarios: " + strdocTributario + "\nClientes: " + strcliente+"\n";
     }
 }
 class OrdenCompra{
@@ -111,11 +138,11 @@ class OrdenCompra{
         return " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden;
     }
 }
-class docTributario{
+class DocTributario{
     private String numero;
     private String rut;
     private Date fecha;
-    public docTributario(String numero, String rut, Date fecha){
+    public DocTributario(String numero, String rut, Date fecha){
         this.numero=numero;
         this.rut=rut;
         this.fecha=fecha;
@@ -144,7 +171,7 @@ class docTributario{
 
 }
 
-class Boleta extends docTributario{
+class Boleta extends DocTributario{
     public Boleta(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
@@ -152,7 +179,7 @@ class Boleta extends docTributario{
         return super.toString();
     }
 }
-class Factura extends docTributario{
+class Factura extends DocTributario{
     public Factura(String numero, String rut, Date fecha){
         super(numero, rut, fecha);
     }
