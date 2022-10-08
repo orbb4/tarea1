@@ -75,16 +75,18 @@ class Direccion{
     }
 }
 class OrdenCompra{
+    private Cliente cliente;
     private String estado;
     private Date fecha;
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
     private ArrayList<Pago> pagos = new ArrayList();
     private ArrayList<DocTributario> documento;
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento){
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
         this.documento = documento; 
+        this.cliente=cliente;
     }
     public float getVuelto(){
         float total = 0;
@@ -122,6 +124,9 @@ class OrdenCompra{
         }
         return totalPeso;
     }
+    public Cliente getCliente(){
+        return cliente;
+    }
     public String getEstado(){
         return estado;
     }
@@ -133,6 +138,9 @@ class OrdenCompra{
     }
     public ArrayList<DetalleOrden> getDetalleOrdenes(){
         return detalleOrdenes;
+    }
+    public void setCliente(Cliente newCliente){
+        cliente=newCliente;
     }
     public void setEstado(String newEstado){
         estado=newEstado;
