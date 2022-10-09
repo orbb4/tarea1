@@ -375,11 +375,7 @@ class Articulo{
     }
     
     public String toString() {
-<<<<<<< HEAD
         return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\npeso: " + getPeso() + "\n";
-=======
-        return "Nombre: " + getNombre() + "\nPrecio: " + getPrecio() + "\nDescripcion: " + getDescripcion() + "\n Peso: "+ getPeso() + "\n";
->>>>>>> c4cf779689c11f3eeedbf7aed9af09180fd6cfed
     }
     
 
