@@ -139,11 +139,7 @@ class OrdenCompra{
         for(Pago a: pagos){
             strpagos+=a.toString();
         }
-        String strdocumento = " ";
-        for(DocTributario a: documento){
-            strdocumento+=a.toString();
-        }
-        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumentos: " + strdocumento;
+        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumento: " + documento;
     }
 }
 class DocTributario{
