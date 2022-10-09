@@ -63,11 +63,11 @@ class Direccion{
         clientes=newClientes;
     }
     public String toString(){
-        String strdocTributario = "";
+        String strdocTributario = " ";
         for(DocTributario a: docTributarios){
             strdocTributario+=a.toString();
         }
-        String strcliente = "";
+        String strcliente = " ";
         for(Cliente a: clientes){
             strcliente+=a.toString();
         }
@@ -153,11 +153,19 @@ class OrdenCompra{
     }
     
     public String toString(){
-        String strorden = "";
+        String strorden = " ";
         for(DetalleOrden a: detalleOrdenes){
             strorden+=a.toString();
         }
-        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden;
+        String strpagos = " ";
+        for(Pago a: pagos){
+            strpagos+=a.toString();
+        }
+        String strdocumento = " ";
+        for(DocTributario a: documento){
+            strdocumento+=a.toString();
+        }
+        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumentos: " + strdocumento;
     }
 }
 class DocTributario{
