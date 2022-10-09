@@ -38,11 +38,9 @@ class Cliente{
 class Direccion{
     private String direccion;
     private ArrayList<DocTributario> docTributarios = new ArrayList();
-    private ArrayList<Cliente> clientes = new ArrayList();
-    public Direccion(String direccion, ArrayList<DocTributario> docTributarios, ArrayList<Cliente> clientes){
+    public Direccion(String direccion, ArrayList<DocTributario> docTributarios){
         this.direccion=direccion;
         this.docTributarios=docTributarios;
-        this.clientes=clientes;
     }
     public String getDireccion(){
         return direccion;
