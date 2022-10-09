@@ -466,6 +466,8 @@ public class Tarea1 {
         
         OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
         System.out.println(comp1.toString());
+        System.out.println(compra.toString());
+        System.out.println(compra2.toString());
   
     }
     
