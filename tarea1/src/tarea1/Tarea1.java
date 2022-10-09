@@ -143,7 +143,7 @@ class OrdenCompra{
         for(Pago a: pagos){
             strpagos+=a.toString();
         }
-        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumento: " + documento;
+        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes:\n" + strorden + "\nPagos: " + strpagos + "\nDocumento: " + documento;
     }
 }
 class DocTributario{
@@ -453,7 +453,8 @@ public class Tarea1 {
         pagos.add(pago2);
         
         OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
-        
+        System.out.println(pago1.toString());
+        System.out.println(comp1.toString());
         
         
         
