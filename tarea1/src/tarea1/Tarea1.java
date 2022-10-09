@@ -57,8 +57,8 @@ class OrdenCompra{
     private Date fecha;
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
     private ArrayList<Pago> pagos = new ArrayList();
-    private ArrayList<DocTributario> documento;
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente, ArrayList<Pago> pagos){
+    private DocTributario documento;
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, DocTributario documento, Cliente cliente, ArrayList<Pago> pagos){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
@@ -405,9 +405,6 @@ public class Tarea1 {
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
         
         Calendar calendario = Calendar.getInstance();
-        calendario.set(Calendar.HOUR_OF_DAY, 8);
-        calendario.set(Calendar.MINUTE, 20);// for 0 min
-        calendario.set(Calendar.SECOND, 1);// for 0 sec
         calendario.set(2022, 8,1);
         Date f1 = new Date(calendario.getTimeInMillis());
         
@@ -422,6 +419,8 @@ public class Tarea1 {
         
         Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
         Efectivo pago2 = new Efectivo(12000, fecha2);
+        
+        
     }
     
 }
