@@ -108,7 +108,7 @@ class OrdenCompra{
     public String getEstado(){
         return estado;
     }
-    public ArrayList<DocTributario> getDoc(){
+    public DocTributario getDoc(){
         return documento;
     }
     public Date getFecha(){
@@ -128,6 +128,9 @@ class OrdenCompra{
     }
     public void setDetalleOrdenes(ArrayList<DetalleOrden> newDetalleOrdenes){
         detalleOrdenes=newDetalleOrdenes;
+    }
+    public void setDocumento(DocTributario documento){
+        this.documento=documento;
     }
     
     public String toString(){
