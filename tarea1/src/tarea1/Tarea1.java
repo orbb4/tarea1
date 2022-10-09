@@ -393,12 +393,16 @@ public class Tarea1 {
         Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
         Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
         Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
+<<<<<<< HEAD
 
+=======
+>>>>>>> cote
         DetalleOrden det1 = new DetalleOrden(1, chocolate);
         DetalleOrden det2 = new DetalleOrden(3, arroz);
         DetalleOrden det3 = new DetalleOrden(3, spaguetti);
         DetalleOrden det4 = new DetalleOrden(1, lentejas);
         DetalleOrden det5 = new DetalleOrden(2, gallSal);
+<<<<<<< HEAD
        
         DetalleOrden orden1 = new DetalleOrden(5, lentejas);
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
@@ -409,6 +413,21 @@ public class Tarea1 {
         calendario.set(Calendar.SECOND, 1);// for 0 sec
         calendario.set(2022, 8,1);
         Date f1 = new Date(calendario.getTimeInMillis());
+=======
+        DetalleOrden orden1 = new DetalleOrden(5, lentejas);
+        DetalleOrden orden2 = new DetalleOrden(12, arroz);
+        
+        Calendar calendario1 = Calendar.getInstance();
+        calendario1.set(2022, 9,4);
+        Date fecha1 = new Date(calendario1.getTimeInMillis());
+        
+        Calendar calendario2 = Calendar.getInstance();
+        calendario2.set(2022, 5,23);
+        Date fecha2 = new Date(calendario2.getTimeInMillis());
+        
+        Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
+        Efectivo pago2 = new Efectivo(12000, fecha2);
+>>>>>>> cote
     }
     
 }
