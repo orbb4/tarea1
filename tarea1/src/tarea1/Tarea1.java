@@ -375,7 +375,7 @@ class Articulo{
     }
     
     public String toString() {
-        return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\n peso: "+ getPeso() + "\n";
+        return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\npeso: " + getPeso() + "\n";
     }
     
 
@@ -388,23 +388,35 @@ public class Tarea1 {
         Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
         Cliente b = new Cliente("Luciano Esteban Garrido Sepúlveda", "17.546.876-3", calle1);
         Articulo arroz = new Articulo(1000, "Arroz", "Arroz Miraflores Grado 1", 1899);
+        System.out.println(arroz.toString());
         Articulo lentejas = new Articulo(1000, "Lentejas", "Deliciosas Lentejas bolsa 4 mm 1 kg", 3119);
+        System.out.println(lentejas.toString());
         Articulo spaguetti = new Articulo(400, "Spaguetti", "Ricos Spaghettis Carozzi n° 5.", 1079);
+        System.out.println(spaguetti.toString());
         Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
         Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
+        System.out.println(gallSal.toString());
         Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
-        
+        System.out.println(chocolate.toString());
         
         DetalleOrden det1 = new DetalleOrden(1, chocolate);
+        System.out.println(det1.toString());
         DetalleOrden det2 = new DetalleOrden(3, arroz);
+        System.out.println(det2.toString());
         DetalleOrden det3 = new DetalleOrden(3, spaguetti);
+        System.out.println(det3.toString());
         DetalleOrden det4 = new DetalleOrden(1, lentejas);
+        System.out.println(det4.toString());
         DetalleOrden det5 = new DetalleOrden(2, gallSal);
-       
+        System.out.println(det5.toString());
+        
         DetalleOrden orden1 = new DetalleOrden(5, lentejas);
+        System.out.println(orden1.toString());
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
+        System.out.println(orden2.toString());
         
         DetalleOrden det6 = new DetalleOrden(25, gallSal);
+        System.out.println(det6.toString());
         
         Calendar calendario = Calendar.getInstance();
         calendario.set(2022, 8,1);
