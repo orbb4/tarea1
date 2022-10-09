@@ -406,15 +406,14 @@ public class Tarea1 {
         Calendar calendario = Calendar.getInstance();
         calendario.set(2022, 8,1);
         Date f1 = new Date(calendario.getTimeInMillis());
-<<<<<<< HEAD
+        
         calendario.set(2022, 9, 1);
         Date f2 = new Date(calendario.getTimeInMillis());
         
         Tarjeta tar = new Tarjeta("crédito", "9430034", 4985, f1);
         Transferencia tran = new Transferencia(4985, f2, "Santander", "9431100");
 
-=======
-        
+     
         
         Calendar calendario1 = Calendar.getInstance();
         calendario1.set(2022, 9,4);
@@ -426,12 +425,8 @@ public class Tarea1 {
         
         Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
         Efectivo pago2 = new Efectivo(12000, fecha2);
-<<<<<<< HEAD
         
         
-=======
->>>>>>> 8ef99f3acd4377b06307097b3a7c0934d75beb0d
->>>>>>> f7d2dc26853c1eedca2320c3dd37e13a4f2c7804
     }
     
 }
