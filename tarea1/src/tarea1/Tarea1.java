@@ -384,7 +384,7 @@ public class Tarea1 {
 
 
     public static void main(String[] args) {
-        
+        Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
     }
     
 }
