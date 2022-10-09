@@ -375,7 +375,11 @@ class Articulo{
     }
     
     public String toString() {
+<<<<<<< HEAD
         return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\npeso: " + getPeso() + "\n";
+=======
+        return "Nombre: " + getNombre() + "\nPrecio: " + getPrecio() + "\nDescripcion: " + getDescripcion() + "\n Peso: "+ getPeso() + "\n";
+>>>>>>> 10d718bce84506a8ed97bed95a1b49f401fbdf75
     }
     
 
@@ -466,10 +470,9 @@ public class Tarea1 {
         
         OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
         System.out.println(comp1.toString());
-        
-        
-        
-        
+        System.out.println(compra.toString());
+        System.out.println(compra2.toString());
+  
     }
     
 }
