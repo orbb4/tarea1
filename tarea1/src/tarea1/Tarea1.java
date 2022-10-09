@@ -392,6 +392,13 @@ public class Tarea1 {
         Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
         Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
         Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
+        DetalleOrden det1 = new DetalleOrden(1, chocolate);
+        DetalleOrden det2 = new DetalleOrden(3, arroz);
+        DetalleOrden det3 = new DetalleOrden(3, spaguetti);
+        DetalleOrden det4 = new DetalleOrden(1, lentejas);
+        DetalleOrden det5 = new DetalleOrden(2, gallSal);
+        
+        
     }
     
 }
