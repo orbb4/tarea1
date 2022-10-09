@@ -411,6 +411,7 @@ public class Tarea1 {
         
         Tarjeta tar = new Tarjeta("crédito", "9430034", 4985, f1);
         Transferencia tran = new Transferencia(4985, f2, "Santander", "9431100");
+
     }
     
 }
