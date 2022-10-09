@@ -37,10 +37,8 @@ class Cliente{
 
 class Direccion{
     private String direccion;
-    private ArrayList<DocTributario> docTributarios = new ArrayList();
-    public Direccion(String direccion, ArrayList<DocTributario> docTributarios){
+    public Direccion(String direccion){
         this.direccion=direccion;
-        this.docTributarios=docTributarios;
     }
     public String getDireccion(){
         return direccion;
@@ -48,19 +46,8 @@ class Direccion{
     public void setDireccion(String direccion){
         this.direccion=direccion;
     }
-    public ArrayList<DocTributario> getDocTributarios(){
-        return docTributarios;
-    }
-    public void setDoctributarios(ArrayList<DocTributario> newDocTributarios){
-        docTributarios=newDocTributarios;
-    }
     public String toString(){
-        String strdocTributario = " ";
-        for(DocTributario a: docTributarios){
-            strdocTributario+=a.toString();
-        }
-        String strcliente = " ";
-        return " Dirección: " + direccion + "\nDocumentos tributarios: " + strdocTributario;
+        return " Dirección: " + direccion + "\n";
     }
 }
 class OrdenCompra{
