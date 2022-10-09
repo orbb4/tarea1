@@ -404,11 +404,13 @@ public class Tarea1 {
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
         
         Calendar calendario = Calendar.getInstance();
-        calendario.set(Calendar.HOUR_OF_DAY, 8);
-        calendario.set(Calendar.MINUTE, 20);// for 0 min
-        calendario.set(Calendar.SECOND, 1);// for 0 sec
         calendario.set(2022, 8,1);
         Date f1 = new Date(calendario.getTimeInMillis());
+        calendario.set(2022, 9, 1);
+        Date f2 = new Date(calendario.getTimeInMillis());
+        
+        Tarjeta tar = new Tarjeta("crédito", "9430034", 4985, f1);
+        Transferencia tran = new Transferencia(4985, f2, "Santander", "9431100");
     }
     
 }
