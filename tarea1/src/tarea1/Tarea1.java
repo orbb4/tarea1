@@ -404,6 +404,8 @@ public class Tarea1 {
         DetalleOrden orden1 = new DetalleOrden(5, lentejas);
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
         
+        DetalleOrden det6 = new DetalleOrden(25, gallSal);
+        
         Calendar calendario = Calendar.getInstance();
         calendario.set(2022, 8,1);
         Date f1 = new Date(calendario.getTimeInMillis());
@@ -411,14 +413,23 @@ public class Tarea1 {
         calendario.set(2022, 9, 1);
         Date f2 = new Date(calendario.getTimeInMillis());
         
+        calendario.set(2022, 8, 2);
+        Date f3 = new Date(calendario.getTimeInMillis());
+        Efectivo efec = new Efectivo(17500, f3);
         Tarjeta tar = new Tarjeta("crédito", "9430034", 4985, f1);
         Transferencia tran = new Transferencia(4985, f2, "Santander", "9431100");
         ArrayList<DetalleOrden> detalles = new ArrayList();
+        ArrayList<DetalleOrden> detalles2 = new ArrayList();
+        detalles2.add(det6);
         Collections.addAll(detalles, det1, det2, det3, det4, det5);
         ArrayList<Pago> pagos = new ArrayList();
+        ArrayList<Pago> pagos2 = new ArrayList();
+        pagos2.add(efec);
         Collections.addAll(pagos, tar, tran);
         DocTributario doc1 = new DocTributario("8881329", c.getRut(), f1, c.getUbicacion());
-        OrdenCompra compra = new OrdenCompra("no pagado", f1, detalles, null, c, pagos);
+        DocTributario doc2 = new DocTributario("8881999", c.getRut(), f3, c.getUbicacion());
+        OrdenCompra compra = new OrdenCompra("no pagado", f1, detalles, doc1, c, pagos);
+        OrdenCompra compra2 = new OrdenCompra("pagado", f3, detalles2, doc2, c, pagos2);
         
         Calendar calendario1 = Calendar.getInstance();
         calendario1.set(2022, 9,4);
