@@ -385,10 +385,17 @@ public class Tarea1 {
 
     public static void main(String[] args) {
         Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
-        Cliente luciano = new Cliente("Luciano Esteban Garrido Sepúlveda", "17.546.876-3", calle1);
+<<<<<<< HEAD
+        Cliente b = new Cliente("Luciano Esteban Garrido Sepúlveda", "17.546.876-3", calle1);
         Articulo arroz = new Articulo(1000, "Arroz", "Arroz Miraflores Grado 1, caracterizado por su longitud consistencia y sabor. Ideal para acompañar cualquier tipo de comida.", 1899);
         Articulo lentejas = new Articulo(1000, "Lentejas", "Deliciosas Lentejas bolsa 4 mm 1 kg, perfectas para tus preparaciones favoritas. Banquete te simplifica la vida y le da sabor a tus comidas.", 3119);
         Articulo spaguetti = new Articulo(400, "Spaguetti", "Las pastas Carozzi son las más tradicionales y preferidas de los chilenos. Esta vez, unos ricos Spaghettis n° 5.", 1079);
+=======
+        Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
+        Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
+        Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
+        
+>>>>>>> 0a487556915e1d74f55b0d61bdb26a20a260449c
     }
     
 }
