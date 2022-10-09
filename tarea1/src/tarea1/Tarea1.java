@@ -386,12 +386,13 @@ public class Tarea1 {
     public static void main(String[] args) {
         Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
         Cliente b = new Cliente("Luciano Esteban Garrido Sepúlveda", "17.546.876-3", calle1);
-        Articulo arroz = new Articulo(1000, "Arroz", "Arroz Miraflores Grado 1, caracterizado por su longitud consistencia y sabor. Ideal para acompañar cualquier tipo de comida.", 1899);
-        Articulo lentejas = new Articulo(1000, "Lentejas", "Deliciosas Lentejas bolsa 4 mm 1 kg, perfectas para tus preparaciones favoritas. Banquete te simplifica la vida y le da sabor a tus comidas.", 3119);
-        Articulo spaguetti = new Articulo(400, "Spaguetti", "Las pastas Carozzi son las más tradicionales y preferidas de los chilenos. Esta vez, unos ricos Spaghettis n° 5.", 1079);
+        Articulo arroz = new Articulo(1000, "Arroz", "Arroz Miraflores Grado 1", 1899);
+        Articulo lentejas = new Articulo(1000, "Lentejas", "Deliciosas Lentejas bolsa 4 mm 1 kg", 3119);
+        Articulo spaguetti = new Articulo(400, "Spaguetti", "Ricos Spaghettis Carozzi n° 5.", 1079);
         Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
         Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
         Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
+<<<<<<< HEAD
         DetalleOrden det1 = new DetalleOrden(1, chocolate);
         DetalleOrden det2 = new DetalleOrden(3, arroz);
         DetalleOrden det3 = new DetalleOrden(3, spaguetti);
@@ -399,6 +400,11 @@ public class Tarea1 {
         DetalleOrden det5 = new DetalleOrden(2, gallSal);
         
         
+=======
+        DetalleOrden orden1 = new DetalleOrden(5, lentejas);
+        DetalleOrden orden2 = new DetalleOrden(12, arroz);
+
+>>>>>>> 7594db6023521275a07e1a7325a03fb33db0ded1
     }
     
 }
