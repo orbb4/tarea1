@@ -81,12 +81,13 @@ class OrdenCompra{
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
     private ArrayList<Pago> pagos = new ArrayList();
     private ArrayList<DocTributario> documento;
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente){
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente, ArrayList<Pago> pagos){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
         this.documento = documento; 
         this.cliente=cliente;
+        this.pagos=pagos;
     }
     public float getVuelto(){
         float total = 0;
