@@ -385,6 +385,10 @@ public class Tarea1 {
 
     public static void main(String[] args) {
         Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
+        Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
+        Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
+        Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
+        
     }
     
 }
