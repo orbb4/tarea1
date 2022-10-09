@@ -63,11 +63,11 @@ class Direccion{
         clientes=newClientes;
     }
     public String toString(){
-        String strdocTributario = "";
+        String strdocTributario = " ";
         for(DocTributario a: docTributarios){
             strdocTributario+=a.toString();
         }
-        String strcliente = "";
+        String strcliente = " ";
         for(Cliente a: clientes){
             strcliente+=a.toString();
         }
@@ -81,12 +81,13 @@ class OrdenCompra{
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
     private ArrayList<Pago> pagos = new ArrayList();
     private ArrayList<DocTributario> documento;
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente){
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente, ArrayList<Pago> pagos){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
         this.documento = documento; 
         this.cliente=cliente;
+        this.pagos=pagos;
     }
     public float getVuelto(){
         float total = 0;
@@ -153,21 +154,31 @@ class OrdenCompra{
     }
     
     public String toString(){
-        String strorden = "";
+        String strorden = " ";
         for(DetalleOrden a: detalleOrdenes){
             strorden+=a.toString();
         }
-        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden;
+        String strpagos = " ";
+        for(Pago a: pagos){
+            strpagos+=a.toString();
+        }
+        String strdocumento = " ";
+        for(DocTributario a: documento){
+            strdocumento+=a.toString();
+        }
+        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumentos: " + strdocumento;
     }
 }
 class DocTributario{
     private String numero;
     private String rut;
     private Date fecha;
-    public DocTributario(String numero, String rut, Date fecha){
+    private Direccion direccion;
+    public DocTributario(String numero, String rut, Date fecha, Direccion direccion){
         this.numero=numero;
         this.rut=rut;
         this.fecha=fecha;
+        this.direccion = direccion;
     }
     public String getNumero(){
         return numero;
@@ -178,32 +189,39 @@ class DocTributario{
     public Date getFecha(){
         return fecha;
     }
+    public Direccion getDireccion(){
+        return direccion;
+    }
+    
     public void setNumero(String newNumero){
         this.numero=newNumero;
+    }
+    public void setDireccion(Direccion dir){
+        direccion = dir;
     }
     public void setRut(String newRut){
         this.rut=newRut;
     }
-    public void setFecha(Date Fecha){
-        this.fecha=fecha;
+    public void setFecha(Date fecha){
+        this.fecha = fecha;
     }
     public String toString(){
-        return " Número: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n";
+        return " Número: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n" + "Direccion: " + direccion + "\n";
     }
 
 }
 
 class Boleta extends DocTributario{
-    public Boleta(String numero, String rut, Date fecha){
-        super(numero, rut, fecha);
+    public Boleta(String numero, String rut, Date fecha, Direccion direccion){
+        super(numero, rut, fecha, direccion);
     }
     public String toString(){
         return super.toString();
     }
 }
 class Factura extends DocTributario{
-    public Factura(String numero, String rut, Date fecha){
-        super(numero, rut, fecha);
+    public Factura(String numero, String rut, Date fecha, Direccion direccion){
+        super(numero, rut, fecha, direccion);
     }
     public String toString(){
         return super.toString();
@@ -231,7 +249,7 @@ class Pago{
         monto = newMonto;
     }
     
-    @Override
+
     public String toString() {
         return "Monto: " + monto + "\nFecha: " + fecha + "\n";
     }
@@ -320,7 +338,7 @@ class DetalleOrden{
     public void setArticulos(Articulo newArticulo){
         arti = newArticulo;
     }
-    // TESTEAR
+
     public String toString(){
         return "Articulo: " + arti.getNombre() + ", cantidad: " + cantidad + "\n";
     }   
@@ -388,7 +406,7 @@ class Articulo{
 
 public class Tarea1 {
 
-    
+
     public static void main(String[] args) {
     }
     
