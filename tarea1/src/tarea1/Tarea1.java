@@ -449,8 +449,8 @@ public class Tarea1 {
         DocTributario doc3 = new DocTributario("27392790786", b.getRut(), fecha1, calle1);
         
         ArrayList<Pago> pagos3 = new ArrayList();
-        pagos.add(pago1);
-        pagos.add(pago2);
+        pagos3.add(pago1);
+        pagos3.add(pago2);
         
         OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
         
