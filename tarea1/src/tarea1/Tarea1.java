@@ -446,13 +446,13 @@ public class Tarea1 {
         detorden1.add(orden1);
         detorden1.add(orden2);
         
-        DocTributario doc1 = new DocTributario("27392790786", b.getRut(), fecha1, calle1);
+        DocTributario doc3 = new DocTributario("27392790786", b.getRut(), fecha1, calle1);
         
-        ArrayList<Pago> pagos = new ArrayList();
+        ArrayList<Pago> pagos3 = new ArrayList();
         pagos.add(pago1);
         pagos.add(pago2);
         
-        OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc1, b, pagos);
+        OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
         
         
         
