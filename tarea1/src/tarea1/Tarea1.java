@@ -2,6 +2,7 @@ package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 
 
 class Cliente{
@@ -412,8 +413,12 @@ public class Tarea1 {
         
         Tarjeta tar = new Tarjeta("crédito", "9430034", 4985, f1);
         Transferencia tran = new Transferencia(4985, f2, "Santander", "9431100");
-
-     
+        ArrayList<DetalleOrden> detalles = new ArrayList();
+        Collections.addAll(detalles, det1, det2, det3, det4, det5);
+        ArrayList<Pago> pagos = new ArrayList();
+        Collections.addAll(pagos, tar, tran);
+        DocTributario doc1 = new DocTributario("8881329", c.getRut(), f1, c.getUbicacion());
+        OrdenCompra compra = new OrdenCompra("no pagado", f1, detalles, null, c, pagos);
         
         Calendar calendario1 = Calendar.getInstance();
         calendario1.set(2022, 9,4);
@@ -425,6 +430,10 @@ public class Tarea1 {
         
         Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
         Efectivo pago2 = new Efectivo(12000, fecha2);
+        
+        
+        
+        
         
         
     }
