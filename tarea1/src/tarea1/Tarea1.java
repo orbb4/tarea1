@@ -392,19 +392,17 @@ public class Tarea1 {
         Cliente c = new Cliente("Juan Luis Lara Lara", "9.708.843-8", calle1);
         Articulo gallSal = new Articulo(187, "Galletas Saladas", "Sabor original - Formato individual", 700);
         Articulo chocolate = new Articulo(200, "Chocolate Amargo", "Con un 70% de cacao", 1700);
-<<<<<<< HEAD
         DetalleOrden det1 = new DetalleOrden(1, chocolate);
         DetalleOrden det2 = new DetalleOrden(3, arroz);
         DetalleOrden det3 = new DetalleOrden(3, spaguetti);
         DetalleOrden det4 = new DetalleOrden(1, lentejas);
         DetalleOrden det5 = new DetalleOrden(2, gallSal);
-        
-        
-=======
         DetalleOrden orden1 = new DetalleOrden(5, lentejas);
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
-
->>>>>>> 7594db6023521275a07e1a7325a03fb33db0ded1
+        Date fecha1 = new Date(2022, 03, 23);
+        Date fecha2 = new Date(2022, 05, 15);
+        Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
+        Efectivo pago2 = new Efectivo(12000, fecha2);
     }
     
 }
