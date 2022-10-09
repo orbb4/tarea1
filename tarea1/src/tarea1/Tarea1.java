@@ -1,6 +1,7 @@
 package tarea1;
 import java.util.Date;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 class Cliente{
@@ -399,8 +400,15 @@ public class Tarea1 {
         DetalleOrden det5 = new DetalleOrden(2, gallSal);
         DetalleOrden orden1 = new DetalleOrden(5, lentejas);
         DetalleOrden orden2 = new DetalleOrden(12, arroz);
-        Date fecha1 = new Date(2022, 03, 23);
-        Date fecha2 = new Date(2022, 05, 15);
+        
+        Calendar calendario1 = Calendar.getInstance();
+        calendario1.set(2022, 9,4);
+        Date fecha1 = new Date(calendario1.getTimeInMillis());
+        
+        Calendar calendario2 = Calendar.getInstance();
+        calendario2.set(2022, 5,23);
+        Date fecha2 = new Date(calendario2.getTimeInMillis());
+        
         Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
         Efectivo pago2 = new Efectivo(12000, fecha2);
     }
