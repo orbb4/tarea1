@@ -416,16 +416,27 @@ public class Tarea1 {
      
         
         Calendar calendario1 = Calendar.getInstance();
-        calendario1.set(2022, 9,4);
+        calendario1.set(2022, 5,23);
         Date fecha1 = new Date(calendario1.getTimeInMillis());
         
         Calendar calendario2 = Calendar.getInstance();
-        calendario2.set(2022, 5,23);
+        calendario2.set(2022, 9, 14);
         Date fecha2 = new Date(calendario2.getTimeInMillis());
         
         Transferencia pago1 = new Transferencia(10000, fecha1, "BancoEstado", "0023475834");
         Efectivo pago2 = new Efectivo(12000, fecha2);
         
+        ArrayList<DetalleOrden> detorden1 = new ArrayList();
+        detorden1.add(orden1);
+        detorden1.add(orden2);
+        
+        DocTributario doc1 = new DocTributario("27392790786", b.getRut(), fecha1, calle1);
+        
+        ArrayList<Pago> pagos = new ArrayList();
+        pagos.add(pago1);
+        pagos.add(pago2);
+        
+        OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc1, b, pagos);
         
     }
     
