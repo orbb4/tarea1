@@ -33,7 +33,7 @@ class Cliente{
         this.ubicacion=ubicacion;
     }
     public String toString(){
-        return " Nombre: " + nombre + "\nRut: " + rut + "\nDirección: " + ubicacion+"\n";
+        return "Nombre: " + nombre + "\nRut: " + rut + "\nDireccion: " + ubicacion+"\n";
     }
 }
 
@@ -49,7 +49,7 @@ class Direccion{
         this.direccion=direccion;
     }
     public String toString(){
-        return " Dirección: " + direccion + "\n";
+        return direccion + "\n";
     }
 }
 class OrdenCompra{
@@ -135,15 +135,15 @@ class OrdenCompra{
     }
     
     public String toString(){
-        String strorden = " ";
+        String strorden = "";
         for(DetalleOrden a: detalleOrdenes){
             strorden+=a.toString();
         }
-        String strpagos = " ";
+        String strpagos = "";
         for(Pago a: pagos){
             strpagos+=a.toString();
         }
-        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes:\n" + strorden + "\nPagos: " + strpagos + "\nDocumento: " + documento;
+        return "Cliente:\n" + cliente + "\nEstado: " + estado + "\nFecha: " + fecha + "\nOrdenes:\n" + strorden + "\nPagos:\n" + strpagos + "\nDocumento:\n" + documento + "\n";
     }
 }
 class DocTributario{
@@ -183,7 +183,7 @@ class DocTributario{
         this.fecha = fecha;
     }
     public String toString(){
-        return " Número: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n" + "Direccion: " + direccion + "\n";
+        return "Numero: " + numero + "\nRut: " + rut + "\nFecha: " + fecha+"\n" + "Direccion: " + direccion + "\n";
     }
 
 }
@@ -263,7 +263,7 @@ class Transferencia extends Pago{
         numCuenta = num;
     }
     public String toString(){
-        return super.toString() + "\nBanco: " + banco + "\nNúmero de Cuenta: " + numCuenta + "\n";
+        return super.toString() + "\nBanco: " + banco + "\nNumero de Cuenta: " + numCuenta + "\n";
     }
 }
 
@@ -288,7 +288,7 @@ class Tarjeta extends Pago{
         numTransaccion = num;
     }
     public String toString(){
-        return super.toString() + "\nTipo: " + tipo + "\nNúmero de Transacción " + numTransaccion + "\n";
+        return super.toString() + "\nTipo: " + tipo + "\nNumero de Transacción " + numTransaccion + "\n";
     }
 }
 
@@ -375,7 +375,7 @@ class Articulo{
     }
     
     public String toString() {
-        return "nombre: " + getNombre() + "\nprecio: " + getPrecio() + "\ndescripcion: " + getDescripcion() + "\n peso: "+ getPeso() + "\n";
+        return "Nombre: " + getNombre() + "\nPrecio: " + getPrecio() + "\nDescripcion: " + getDescripcion() + "\n Peso: "+ getPeso() + "\n";
     }
     
 
@@ -386,7 +386,7 @@ public class Tarea1 {
 
     public static void main(String[] args) {
         Direccion calle1 = new Direccion("4 Poniente 3711 El Pinar, San Joaquin");
-        Cliente b = new Cliente("Luciano Esteban Garrido Sepúlveda", "17.546.876-3", calle1);
+        Cliente b = new Cliente("Luciano Esteban Garrido Sepulveda", "17.546.876-3", calle1);
         Articulo arroz = new Articulo(1000, "Arroz", "Arroz Miraflores Grado 1", 1899);
         Articulo lentejas = new Articulo(1000, "Lentejas", "Deliciosas Lentejas bolsa 4 mm 1 kg", 3119);
         Articulo spaguetti = new Articulo(400, "Spaguetti", "Ricos Spaghettis Carozzi n° 5.", 1079);
@@ -453,7 +453,6 @@ public class Tarea1 {
         pagos3.add(pago2);
         
         OrdenCompra comp1 = new OrdenCompra("No pagado", fecha1, detorden1, doc3, b, pagos3);
-        System.out.println(pago1.toString());
         System.out.println(comp1.toString());
         
         
