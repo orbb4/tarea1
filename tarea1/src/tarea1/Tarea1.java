@@ -61,11 +61,11 @@ class Direccion{
         clientes=newClientes;
     }
     public String toString(){
-        String strdocTributario = "";
+        String strdocTributario = " ";
         for(DocTributario a: docTributarios){
             strdocTributario+=a.toString();
         }
-        String strcliente = "";
+        String strcliente = " ";
         for(Cliente a: clientes){
             strcliente+=a.toString();
         }
@@ -79,12 +79,13 @@ class OrdenCompra{
     private ArrayList<DetalleOrden> detalleOrdenes = new ArrayList();
     private ArrayList<Pago> pagos = new ArrayList();
     private ArrayList<DocTributario> documento;
-    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente){
+    public OrdenCompra(String estado, Date fecha, ArrayList<DetalleOrden> detalleOrdenes, ArrayList<DocTributario> documento, Cliente cliente, ArrayList<Pago> pagos){
         this.estado = estado;
         this.fecha = fecha;
         this.detalleOrdenes = detalleOrdenes;
         this.documento = documento; 
         this.cliente=cliente;
+        this.pagos=pagos;
     }
     public float getVuelto(){
         float total = 0;
@@ -151,11 +152,19 @@ class OrdenCompra{
     }
     
     public String toString(){
-        String strorden = "";
+        String strorden = " ";
         for(DetalleOrden a: detalleOrdenes){
             strorden+=a.toString();
         }
-        return " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden;
+        String strpagos = " ";
+        for(Pago a: pagos){
+            strpagos+=a.toString();
+        }
+        String strdocumento = " ";
+        for(DocTributario a: documento){
+            strdocumento+=a.toString();
+        }
+        return " Cliente: " + cliente + " Estado: " + estado + "\nFecha: " + fecha + "\nOrdenes: " + strorden + "\nPagos: " + strpagos + "\nDocumentos: " + strdocumento;
     }
 }
 class DocTributario{
